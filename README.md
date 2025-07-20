@@ -1,119 +1,164 @@
+# 🎓 Learning Management System (LMS) Project
 
-
-# Learning Management System (LMS) 🚀
-
-I have **designed and developed** this **Learning Management System (LMS)** as a full-stack web application using the **MERN stack** (MongoDB, Express.js, React, Node.js). For styling, I integrated **Tailwind CSS** and **DaisyUI**, while **Cloudinary** handles media asset management and **Razorpay** powers secure subscription payments.
-
----
-
-## 📌 Overview
-
-This LMS platform streamlines online learning by enabling **course creation**, **content management**, **user enrollment**, and **progress tracking** within a clean, intuitive user interface. Educators can build and manage rich course content, while learners can seamlessly browse, enroll, and track their progress. Secure payment flows are handled through **Razorpay**, ensuring a smooth subscription experience.
+This project is a **Learning Management System (LMS)** that I have **designed and developed** from scratch using the **MERN stack** (MongoDB, Express.js, React, Node.js). It uses **Tailwind CSS** and **DaisyUI** for modern responsive styling, **Cloudinary** for handling media uploads, and **Stripe** for secure payment processing. User authentication and account management are powered by **Clerk**, ensuring a seamless and secure user experience.
+I have deployed the backend on **Vercel** and tested my REST APIs with **Postman**.
 
 ---
 
-## ⚙️ Key Features
+## 📚 Table of Contents
 
-* 🔒 **Robust Authentication & Authorization** — Secure user login and role-based access control.
-* 🎓 **Dynamic Course Management** — Create, edit, and remove courses effortlessly.
-* ☁️ **Cloud-Based Media Handling** — Upload and serve course assets via Cloudinary.
-* 📈 **Enrollment & Progress Tracking** — Track learner engagement and course completion.
-* 💸 **Integrated Payments** — Manage premium subscriptions with Razorpay.
-* 🖥️ **Responsive Design** — Fully responsive UI built with React, Tailwind CSS, and DaisyUI.
-* 📊 **Admin Dashboard** — Monitor subscriptions, students, and revenue insights.
-
----
-
-## ✅ Tech Stack & Dependencies
-
-* **Frontend:** React, Tailwind CSS, DaisyUI
-* **Backend:** Node.js, Express.js, MongoDB (Mongoose)
-* **Auth:** Clerk Authentication
-* **Media:** Cloudinary API
-* **Payments:** Razorpay API
-* **Misc:** JWT, Axios, React Router
+* [Overview](#overview)
+* [Tech Preview](#tech-preview)
+* [Key Features](#key-features)
+* [Prerequisites](#prerequisites)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Payments & Subscription](#payments--subscription)
 
 ---
 
-## 🚀 Getting Started
+## ✅ Overview
 
-### Prerequisites
+This LMS is a complete **web-based learning platform** that lets educators create courses, upload lectures and materials (stored on **Cloudinary**), and manage enrolled students. Students can securely register/login (using **Clerk**), enroll in courses, pay for premium content via **Stripe**, and track their course progress in an interactive dashboard.
 
-Ensure you have the following installed locally:
-
-* [Node.js](https://nodejs.org/) (v14+)
-* [npm](https://www.npmjs.com/) (v6+)
-* [MongoDB](https://www.mongodb.com/) (v4+)
+The backend is built with **Express.js**, **Mongoose**, and is running on port `5000`. The frontend runs locally on port `5173`. For testing my backend APIs, I have used **Postman** to verify all user, course, and payment routes.
 
 ---
 
-### Installation Steps
+## 🔍 Tech Preview
 
-1️⃣ **Clone the project:**
-
-```bash
-git clone https://github.com/Sukomal07/learning-management-system.git
-cd learning-management-system
-```
-
-2️⃣ **Install server dependencies:**
-
-```bash
-cd server
-npm install
-```
-
-3️⃣ **Install client dependencies:**
-
-```bash
-cd ../client
-npm install
-```
-
-4️⃣ **Configure environment variables:**
-Create a `.env` file inside the `server` folder with:
-
-```env
-PORT=5000
-MONGO_URI=<your_mongodb_uri>
-FRONTEND_URL=http://localhost:5173
-JWT_SECRET=<your_jwt_secret>
-JWT_EXPIRE=<jwt_expiration>
-CLOUD_NAME=<your_cloudinary_name>
-API_KEY=<your_cloudinary_api_key>
-API_SECRET=<your_cloudinary_api_secret>
-GMAIL_ID=<your_gmail_id>
-APP_PASSWORD=<your_gmail_app_password>
-RAZORPAY_API_KEY=<your_razorpay_api_key>
-RAZORPAY_PLAN_ID=<your_razorpay_plan_id>
-RAZORPAY_KEY_SECRET=<your_razorpay_key_secret>
-```
+* **Frontend:** Runs locally at [http://localhost:5173](http://localhost:5173)
 
 ---
 
-## 💻 Running the Application
+## 🚀 Key Features
 
-**Start the server:**
+* 🔑 **Authentication:** User account creation & login with **Clerk**
+* 🗂️ **Course Management:** Add, update, delete courses and upload multimedia content using **Cloudinary**
+* 👩‍🎓 **Enrollments:** Users can enroll and see their progress
+* 💳 **Secure Payments:** Integrated with **Stripe** for handling payments and subscriptions
+* 📡 **API Testing:** All backend APIs tested using **Postman**
+* 🎨 **Responsive UI:** Built with **React**, **Tailwind CSS**, **DaisyUI**
+* 🔒 **Secure & Scalable:** Uses Express middleware, CORS, dotenv, SVIX webhooks, and secure tokens
 
-```bash
-cd server
-npm run dev
-```
+---
 
-**Start the client:**
+## 🛠️ Prerequisites
 
-```bash
-cd ../client
-npm run dev
-```
+Before running this project locally, make sure you have:
 
-**Access locally:** [http://localhost:5173](http://localhost:5173)
+* [Node.js](https://nodejs.org/) (v14 or higher)
+* [npm](https://www.npmjs.com/) (v6 or higher)
+* [MongoDB](https://www.mongodb.com/) (Atlas or local)
+* [Cloudinary](https://cloudinary.com/) account & credentials
+* [Clerk](https://clerk.dev/) account & API keys
+* [Stripe](https://stripe.com/) account & API keys
+* [Postman](https://www.postman.com/) (optional, for API testing)
+
+---
+
+## ⚙️ Installation
+
+1. **Clone this repository**
+
+   ```bash
+   git clone https://github.com/your-username/your-repo-name.git
+   cd your-repo-name
+   ```
+
+2. **Install server dependencies**
+
+   ```bash
+   cd server
+   npm install
+   ```
+
+3. **Install client dependencies**
+
+   ```bash
+   cd ../client
+   npm install
+   ```
+
+4. **Set up environment variables**
+
+   Create a `.env` file inside the `server` directory and add the following:
+
+   ```env
+   PORT=5000
+   MONGODB_URI=<your_mongodb_uri>
+   FRONTEND_URL=http://localhost:5173
+
+   CLERK_SECRET_KEY=<your_clerk_secret_key>
+   CLERK_PUBLISHABLE_KEY=<your_clerk_publishable_key>
+
+   STRIPE_SECRET_KEY=<your_stripe_secret_key>
+   STRIPE_PUBLISHABLE_KEY=<your_stripe_publishable_key>
+   STRIPE_WEBHOOK_SECRET=<your_stripe_webhook_secret>
+
+   CLOUDINARY_NAME=<your_cloudinary_name>
+   CLOUDINARY_API_KEY=<your_cloudinary_api_key>
+   CLOUDINARY_SECRET_KEY=<your_cloudinary_api_secret>
+   ```
+
+---
+
+## ▶️ Usage
+
+1. **Run the backend server**
+
+   ```bash
+   cd server
+   npm run dev
+   ```
+
+   > Runs on **[http://localhost:5000](http://localhost:5000)**
+
+2. **Run the frontend client**
+
+   ```bash
+   cd ../client
+   npm run dev
+   ```
+
+   > Runs on **[http://localhost:5173](http://localhost:5173)**
+
+3. **API Testing**
+
+   Use **Postman** to test authentication, course CRUD, enrollments, and payment routes.
+
+---
+
+## 💵 Payments & Subscription
+
+* **Integrated with Stripe:** Users can purchase course access securely.
+* **Webhook handling:** Uses **SVIX** to handle Stripe events.
+* **User Subscription Flow:**
+
+  * Browse available courses
+  * Add to cart & checkout securely with Stripe
+  * View purchased courses & learning progress in their dashboard
+
+---
+
+## 🧩 What I Used
+
+* **Clerk:** Easy and secure user sign-up & management.
+* **Express.js:** API routing, middleware, JWT auth.
+* **Mongoose:** MongoDB data models.
+* **Cloudinary:** Store and deliver uploaded media.
+* **Stripe:** Handle secure payments.
+* **Multer:** Handle file uploads.
+* **SVIX:** Manage Stripe webhooks.
+* **dotenv, cors, nodemon:** Essential backend utilities.
+* **Tailwind CSS + DaisyUI:** Responsive and clean UI design.
+
+---
+
+## 🚀 What I Learned
+
+Building this project helped me practice **secure authentication**, **RESTful API design**, **full-stack development**, **Stripe integration**, **file storage using Cloudinary**, and **modern deployment** using Vercel.
+
+---
 
 
-## 💼 Subscription Management
-
-The LMS integrates **Razorpay** for seamless payment processing:
-
-* Users can explore available subscription plans.
-* Payments are securely handled via Razorpay’s checkout.
-* Subscriptions can be canceled directly through the user dashboard.
