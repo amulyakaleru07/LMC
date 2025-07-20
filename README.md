@@ -155,10 +155,6 @@ Before running this project locally, make sure you have:
 
 ---
 
-## 🚀 What I Learned
 
-Building this project helped me practice **secure authentication**, **RESTful API design**, **full-stack development**, **Stripe integration**, **file storage using Cloudinary**, and **modern deployment** using Vercel.
-
----
 
 
