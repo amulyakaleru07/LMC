@@ -44,7 +44,6 @@ Ensure you have the following installed locally:
 * [Node.js](https://nodejs.org/) (v14+)
 * [npm](https://www.npmjs.com/) (v6+)
 * [MongoDB](https://www.mongodb.com/) (v4+)
-* Valid accounts for **Cloudinary** and **Razorpay**
 
 ---
 
